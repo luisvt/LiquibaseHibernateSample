@@ -5,4 +5,14 @@ Very simple demonstration of using liquibase-hibernate with liquibase-maven-plug
 
 Usage:
 
-$ mvn liquibase:diff
+ * Generate diff:
+
+```
+mvn -Pdb-diff
+```
+
+ * Sync Database:
+
+```
+mvn -Pdb-sync
+```
