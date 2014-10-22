@@ -9,7 +9,7 @@
     </build>
     <profiles>
         <profile>
-            <id>liq-diff</id>
+            <id>db-diff</id>
             <build>
                 <plugins>
                     <plugin>
