@@ -125,8 +125,7 @@
                             <referenceUrl>${db.referenceUrl}</referenceUrl>
                             <verbose>true</verbose>
                             <logging>debug</logging>
-                            <rollbackCount>-1</rollbackCount>
-                            <rollbackDate>Oct 29, 2014</rollbackDate>
+                            <rollbackCount>1</rollbackCount>
                         </configuration>
                         <executions>
                             <execution>
