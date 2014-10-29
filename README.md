@@ -1,4 +1,4 @@
-LiquibaseHibernateTest
+LiquibaseHibernateSample
 ======================
 
 Very simple demonstration of using liquibase-hibernate with liquibase-maven-plugin.
@@ -15,4 +15,10 @@ mvn -Pdb-diff
 
 ```
 mvn -Pdb-sync
+```
+
+ * Rollback Database:
+
+```
+mvn -Pdb-rollback
 ```
