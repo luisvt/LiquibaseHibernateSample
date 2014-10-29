@@ -14,8 +14,6 @@
         
         <changeLogFile>src/main/resources/db/db-changelog.xml</changeLogFile>
     </properties>
-    <build>
-    </build>
     <profiles>
         <profile>
             <id>db-diff</id>
