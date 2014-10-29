@@ -1,11 +1,10 @@
-package pl.jitsolutions.liquibasehibernatetest.entities;
+package com.liquibasehibernatetest.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 
 @Entity
 public class Dummy {
@@ -16,7 +15,7 @@ public class Dummy {
 	@Column(nullable = false)
 	private String name;
 	@Column(nullable = false)
-	private String value;
+	private String val;
 
 	public Long getId() {
 		return id;
@@ -34,11 +33,11 @@ public class Dummy {
 		this.name = name;
 	}
 
-	public String getValue() {
-		return value;
+	public String getVal() {
+		return val;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
+	public void setVal(String val) {
+		this.val = val;
 	}
 }
