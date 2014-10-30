@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
-    <changeSet author="luis (generated)" id="1414640475781-1">
-        <addNotNullConstraint columnDataType="int" columnName="val" tableName="dummy"/>
+    <changeSet author="luis (generated)" id="1414633622367-1">
+        <renameColumn 
+            columnDataType="VARCHAR(255)"
+            newColumnName="val"
+            oldColumnName="some_val"
+            schemaName="test"
+            tableName="dummy"/>
     </changeSet>
 </databaseChangeLog>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
+    <changeSet author="luis (generated)" id="1414634068095-1">
+        <!--<addNotNullConstraint columnDataType="int" columnName="val" tableName="dummy"/>-->
+        <addColumn
+            schemaName="test"
+            tableName="dummy">
+            <column name="valInt" type="int"/>
+        </addColumn>
+<!--        <update schemaName="test"
+                        tableName="dummy">
+            <column name="valInt" type="int"
+                    value="CASE val
+                             WHEN 'val1' THEN 1
+                             WHEN 'val2' THEN 2
+                           END"/>
+        </update>-->
+        <sql>
+            UPDATE test.dummy SET 
+            valInt = CASE val
+                WHEN 'val1' THEN 1
+                WHEN 'val2' THEN 2
+            END
+        </sql>
+        <dropColumn schemaName="test" tableName="dummy" columnName="val"/>
+        <renameColumn 
+            columnDataType="INT"
+            newColumnName="val"
+            oldColumnName="valInt"
+            schemaName="test"
+            tableName="dummy"/>
+        
+        <rollback>
+            <addColumn
+                schemaName="test"
+                tableName="dummy">
+                <column name="valStr" type="VARCHAR(255)"/>
+            </addColumn>
+<!--            <update schemaName="test"
+                    tableName="dummy">
+                <column name="valInt" type="int" 
+                        value="CASE val
+                             WHEN 1 THEN 'val1'
+                             WHEN 2 THEN 'val2'
+                           END CASE"/>
+            </update>-->
+            <sql>
+            UPDATE test.dummy SET 
+            valStr = CASE val
+                WHEN 1 THEN 'val1'
+                WHEN 2 THEN 'val2'
+              END
+            </sql>
+            <dropColumn schemaName="test" tableName="dummy" columnName="val"/>
+            <renameColumn 
+                columnDataType="VARCHAR(255)"
+                newColumnName="val"
+                oldColumnName="valStr"
+                schemaName="test"
+                tableName="dummy"/>
+        
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

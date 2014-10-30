@@ -15,7 +15,7 @@ public class Dummy {
 	@Column(nullable = false)
 	private String name;
 	@Column(nullable = false)
-	private String val;
+	private Integer val;
 
 	public Long getId() {
 		return id;
@@ -33,11 +33,11 @@ public class Dummy {
 		this.name = name;
 	}
 
-	public String getVal() {
+	public Integer getVal() {
 		return val;
 	}
 
-	public void setVal(String val) {
+	public void setVal(Integer val) {
 		this.val = val;
 	}
 }
