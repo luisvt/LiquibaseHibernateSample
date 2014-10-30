@@ -79,7 +79,7 @@
             </build>
         </profile>
         <profile>
-            <id>db-sync</id>
+            <id>db-update</id>
             <build>
                 <plugins>
                     <plugin>
@@ -92,7 +92,6 @@
                             <driver>${db.driver}</driver>
                             <username>${db.username}</username>
                             <password>${db.password}</password>
-                            <referenceUrl>${db.referenceUrl}</referenceUrl>
                             <verbose>true</verbose>
                             <logging>debug</logging>
                         </configuration>
@@ -100,7 +99,7 @@
                             <execution>
                                 <phase>generate-sources</phase>
                                 <goals>
-                                    <goal>changelogSync</goal>
+                                    <goal>update</goal>
                                 </goals>
                             </execution>
                         </executions>
